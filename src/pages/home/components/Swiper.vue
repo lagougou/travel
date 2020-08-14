@@ -1,10 +1,10 @@
 <template>
 <div class="wrapper">
-    <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
+    <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper" v-show="list.length">
     <!-- slides -->
-    <swiper-slide><img class="swiper-img" src="https://imgs.qunarzz.com/vs_ceph_vs_tts/747e5cb2-b631-477e-a5bd-3fc3f2e43bb6.jpg_r_390x260x95_f8549102.jpg" alt="japan"></swiper-slide>
-    <swiper-slide><img class="swiper-img" src="https://himg1.qunarzz.com/imgs/201903/26/C.HFGCaTZKnwps56fLZ720.jpg" alt=""></swiper-slide>
-
+    <swiper-slide v-for="item in list" :key="item.id">
+      <img :src="item.imgUrl" alt="" class="swiper-img">
+    </swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
@@ -14,6 +14,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
@@ -40,7 +43,7 @@ export default {
         height 100%
     .wrapper
         width 100%
-        height 3rem
+        height 2rem
         overflow hidden
         // padding-bottom 31.25%
         .swiper-img

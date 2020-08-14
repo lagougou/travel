@@ -27,7 +27,7 @@
                    <div class="button">北京</div>
                </div>
            </div>
-           
+
        </div>
        <div class="area">
            <div class="title border">A城市</div>
@@ -82,9 +82,7 @@ export default {
   name: 'CityList',
   mounted () {
     console.log(this.$refs.wrapper)
-    this.scroll = new Bscroll(this.$refs.wrapper,{
-        pullUpLoad: true
-    })  
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>
@@ -97,8 +95,9 @@ export default {
         left 0
         right 0
         bottom 0
+        z-index 1
         .border
-            &:before 
+            &:before
                 border-color #ccc
             &:after
                 border-color #ccc
@@ -124,5 +123,5 @@ export default {
             padding-left 0.2rem
             border-bottom 0.02rem solid #eee
             font-size 0.28rem
-            font-weight 600 
+            font-weight 600
 </style>
