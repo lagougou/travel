@@ -34,6 +34,7 @@ export default {
         border-bottom .08rem solid #eee
         .item-img
             height 2.4rem
+            width 100%
         .item-info
             padding .32rem 0
             padding-left .24rem

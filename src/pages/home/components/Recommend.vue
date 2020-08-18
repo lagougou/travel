@@ -59,6 +59,7 @@ export default {
                 text-overflow ellipsis
                 white-space nowrap
                 width 70%
+                color #666
             .item-button
                 background #ff9300
                 padding 0 .1rem
